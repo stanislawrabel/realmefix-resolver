@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 import os
 
 # ---------- CONFIG ----------
-UA = "Dalvik/2.1.0 (Linux; U; Android 13; RMX5011 Build/TKQ1.230329.002)"
+UA = "Dalvik/2.1.0 (Linux; U; Android 16; RMX5011 Build/TKQ1.230329.002)"
 DEFAULT_TIMEOUT = 12
 SESSION = requests.Session()
 SESSION.headers.update({
@@ -19,7 +19,7 @@ app = Flask(__name__)
 # ---------- LINK FIX ----------
 def fix_domain(u: str) -> str:
     u = u.replace("allawnos.com", "allawnofs.com")
-    u = u.replace("component-ota-eu.allawnos.com", "component-ota-eu.allawnofs.com")
+    u = u.replace("gauss-compota-f.allawnos.com", "component-ota-eu.allawnofs.com")
     return u.strip()
 
 # ---------- RESOLUTION CORE ----------
@@ -147,3 +147,4 @@ def api_resolve():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
+
